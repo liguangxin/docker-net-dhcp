@@ -34,10 +34,10 @@ jobs:
       - name: Build
         run: make PLUGIN_TAG=${{ steps.vars.outputs.tag }} multiarch
 
-      - name: Push
-        env:
-          REGISTRY_USERNAME: ${{ github.actor }}
-          REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          make PLUGIN_TAG=${{ steps.vars.outputs.tag }} push-multiarch
-          scripts/tag_multiarch_plugin.py -p "$PLATFORMS" "$PLUGIN_NAME:${{ steps.vars.outputs.tag }}" latest
+      - name: Upload artifacts
+        id: upload-artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-artifacts
+          path: /usr/sbin/net-dhcp
+        continue-on-error: true
