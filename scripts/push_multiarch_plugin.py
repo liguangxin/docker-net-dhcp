@@ -41,7 +41,7 @@ def main():
     tag = ref['tag']
 
     reg = DXF(hostname, repo, auth=dxf_auth)
-
+    print(reg)
     print(f'Pushing config file `{args.config}`')
     config_size = os.path.getsize(args.config)
     config_digest = reg.push_blob(filename=args.config, check_exists=True)
