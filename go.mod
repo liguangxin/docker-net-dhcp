@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.21.3
 
 require (
-	github.com/docker/docker v26.1.5+incompatible
+	github.com/docker/docker v26.1.3+incompatible
 	github.com/gorilla/handlers v1.5.1
 	github.com/mitchellh/mapstructure v1.4.1
 	github.com/sirupsen/logrus v1.8.1
